@@ -1,7 +1,9 @@
 #ifndef _USER_H_
 #define _USER_H_
-#include "pstat.h" // added by JXP220032
+
 struct stat;
+struct pstat; // added by JXP220032
+
 
 // system calls
 int fork(void);

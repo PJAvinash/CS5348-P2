@@ -169,6 +169,20 @@ void            switchuvm(struct proc*);
 void            switchkvm(void);
 int             copyout(pde_t*, uint, void*, uint);
 
+/*
+** added by JXP220032
+*/
+//pstat.c
+int             getpinfohelper(struct pstat *);
+
+//scheduler.c 
+int             setticketshelper(struct proc*,int);
+int             random(int, int);
+void            roundrobin(void);
+void            lottery(void);
+/* end of modification */
+
+
 // number of elements in fixed-size array
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))
 

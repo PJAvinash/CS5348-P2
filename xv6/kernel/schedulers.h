@@ -10,10 +10,4 @@ struct ptable {
 
 // Declare the ptable instance as extern
 extern struct ptable ptable;
-
-int setticketshelper(struct proc*,int);
-int random(int, int);
-void roundrobin(void);
-void lottery(void);
-
 #endif // SCHEDULERS_H

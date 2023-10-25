@@ -1,4 +1,5 @@
 #include "pstat.h"
+#include "defs.h"
 #include "types.h"
 #include "schedulers.h"
 
