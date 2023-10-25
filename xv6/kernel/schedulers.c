@@ -7,10 +7,10 @@
 #include "spinlock.h"
 #include "schedulers.h"
 // added by JXP220032
-struct ptable {
-  struct spinlock lock;
-  struct proc proc[NPROC];
-} ptable;
+// struct ptable {
+//   struct spinlock lock;
+//   struct proc proc[NPROC];
+// } ptable;
 
 /*
 ** setticketshelper is used for setting tickets to a process 

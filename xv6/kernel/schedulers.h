@@ -3,11 +3,12 @@
 #include "param.h"
 #include "proc.h"
 #include "spinlock.h"
-// struct ptable {
-//   struct spinlock lock;
-//   struct proc proc[NPROC];
-// };
+struct {
+  struct spinlock lock;
+  struct proc proc[NPROC];
+} ptable;
 
 // Declare the ptable instance as extern
-extern struct ptable ptable;
+//extern struct ptable ptable;
+
 #endif // SCHEDULERS_H
