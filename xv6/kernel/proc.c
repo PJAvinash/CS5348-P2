@@ -271,7 +271,7 @@ scheduler(void)
     sti();
 
     // Loop over process table looking for process to run.
-    acquire(&ptable.lock);
+    //acquire(&ptable.lock);
     // for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
     //   if(p->state != RUNNABLE)
     //     continue;
@@ -290,7 +290,7 @@ scheduler(void)
     //   proc = 0;
     // }
     roundrobin(); 
-    release(&ptable.lock);
+    //release(&ptable.lock);
 
   }
 }
