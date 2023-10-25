@@ -1,13 +1,37 @@
 
-# modified by JXP220032 
 # user programs
-USER_PROGS := $(wildcard user/testcases/*.c)
+USER_PROGS := \
+	cat\
+	echo\
+	forktest\
+	grep\
+	init\
+	kill\
+	ln\
+	ls\
+	mkdir\
+	rm\
+	sh\
+	stressfs\
+	tester\
+	usertests\
+	wc\
+	default_tickets\
+	getpinfo\
+	high_tickets\
+	random\
+	stress_equal\
+	switch_tickets\
+	forktickets\
+	high_sleep\
+	processesinuse\
+	setticket\
+	stress_manylow\
+	grapher1\
+	zombie
 
-# Append the user programs you want to keep from the old list
-USER_PROGS += cat echo forktest grep init kill ln ls mkdir rm sh stressfs tester usertests wc zombie
 
-USER_PROGS := $(addprefix user/, $(notdir $(USER_PROGS)))
-
+USER_PROGS := $(addprefix user/, $(USER_PROGS))
 
 # user library files
 USER_LIBS := \
@@ -91,4 +115,3 @@ user/%.d: user/%.c
 user/%.d: user/%.S
 	$(CC) $(CPPFLAGS) $(USER_CPPFLAGS) $(ASFLAGS) $(USER_ASFLAGS) \
 		-M -MG $< -MF $@ -MT $@ -MT $(<:.S=.o)
-
