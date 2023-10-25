@@ -1,6 +1,6 @@
 #ifndef _USER_H_
 #define _USER_H_
-
+#include "pstat.h" // added by JXP220032
 struct stat;
 
 // system calls
@@ -25,6 +25,8 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+int settickets(int); // added by JXP220032 
+int getpinfo(struct pstat*); // added by JXP220032
 
 // user library functions (ulib.c)
 int stat(char*, struct stat*);

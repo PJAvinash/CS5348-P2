@@ -5,11 +5,12 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
+#include "schedulers.h" // added by JXP220032 
 
-struct {
-  struct spinlock lock;
-  struct proc proc[NPROC];
-} ptable;
+// struct {
+//   struct spinlock lock;
+//   struct proc proc[NPROC];
+// } ptable;
 
 static struct proc *initproc;
 
@@ -45,6 +46,8 @@ allocproc(void)
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
+  p->tickets = 1; // added by JXP220032
+  p->ticks = 0; // added by JXP220032
   release(&ptable.lock);
 
   // Allocate kernel stack if possible.
@@ -143,6 +146,9 @@ fork(void)
   }
   np->sz = proc->sz;
   np->parent = proc;
+  np->tickets = proc->tickets; // added by JXP220032 , inheriting same number of tickets from parent
+  np->ticks = 0; // added by JXP220032 , setting ticks to 0 initially 
+
   *np->tf = *proc->tf;
 
   // Clear %eax so that fork returns 0 in the child.
@@ -252,6 +258,9 @@ wait(void)
 //  - swtch to start running that process
 //  - eventually that process transfers control
 //      via swtch back to the scheduler.
+/*
+** modified by JXP220032 , 
+*/
 void
 scheduler(void)
 {
@@ -263,23 +272,24 @@ scheduler(void)
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state != RUNNABLE)
-        continue;
+    // for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    //   if(p->state != RUNNABLE)
+    //     continue;
 
-      // Switch to chosen process.  It is the process's job
-      // to release ptable.lock and then reacquire it
-      // before jumping back to us.
-      proc = p;
-      switchuvm(p);
-      p->state = RUNNING;
-      swtch(&cpu->scheduler, proc->context);
-      switchkvm();
+    //   // Switch to chosen process.  It is the process's job
+    //   // to release ptable.lock and then reacquire it
+    //   // before jumping back to us.
+    //   proc = p;
+    //   switchuvm(p);
+    //   p->state = RUNNING;
+    //   swtch(&cpu->scheduler, proc->context);
+    //   switchkvm();
 
-      // Process is done running for now.
-      // It should have changed its p->state before coming back.
-      proc = 0;
-    }
+    //   // Process is done running for now.
+    //   // It should have changed its p->state before coming back.
+    //   proc = 0;
+    // }
+    roundrobin(); 
     release(&ptable.lock);
 
   }

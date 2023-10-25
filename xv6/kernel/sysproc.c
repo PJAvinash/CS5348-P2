@@ -5,6 +5,8 @@
 #include "mmu.h"
 #include "proc.h"
 #include "sysfunc.h"
+#include "schedulers.h" // added by JXP220032
+#include "pstat.h" // added by JXP220032
 
 int
 sys_fork(void)
@@ -88,3 +90,29 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+
+/*
+** added by JXP220032
+** system call function for setting number of tickets for caller process
+*/
+int sys_settickets(void){
+  int numtickets ;
+  argint(0, &numtickets);
+  acquire(&ptable.lock);
+  int retval = setticketshelper(proc,numtickets);
+  release(&ptable.lock);
+  return retval;
+}
+
+/*
+** added by JXP220032
+** system call function for getting process info
+*/
+int sys_getpinfo(void){
+  struct pstat* inputptr;
+  argptr(0,(void*)&inputptr,sizeof(*inputptr));
+  int retval = getpinfohelper(inputptr);
+  return retval;
+}
+
