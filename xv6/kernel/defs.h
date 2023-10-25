@@ -175,7 +175,7 @@ int             copyout(pde_t*, uint, void*, uint);
 ** added by JXP220032
 */
 //pstat.c
-int             getpinfohelper(struct pstat *);
+int             getpinfohelper(struct pstat*);
 
 //scheduler.c 
 int             setticketshelper(struct proc*,int);
