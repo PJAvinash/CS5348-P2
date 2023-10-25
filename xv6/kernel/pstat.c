@@ -1,7 +1,9 @@
 #include "types.h"
 #include "defs.h"
+#include "param.h"
+#include "mmu.h"
+#include "x86.h"
 #include "pstat.h"
-#include "types.h"
 #include "schedulers.h"
 
 /*
