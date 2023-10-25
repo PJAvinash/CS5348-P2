@@ -75,33 +75,36 @@ void roundrobin(){
 /*
 ** lottery() is the lottery scheduler , uses psuedo-random numbers generated to pick the winner
 */
-void lottery(){
+void lottery()
+{
     struct proc *p;
     sti();
     acquire(&ptable.lock);
     int totaltickets = 0;
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-        if(p->state == RUNNABLE){
-            totaltickets += p->tickets;
-        }
+    for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+    {
+      if (p->state == RUNNABLE)
+      {
+        totaltickets += p->tickets;
+      }
     }
-    int new_pick = random(1,totaltickets);
-    for(p = ptable.proc; p < &ptable.proc[NPROC] && new_pick > 0; p++){
-        if(p->state == RUNNABLE){
-            new_pick -= p->tickets;
+    int new_pick = random(1, totaltickets);
+    for (p = ptable.proc; p < &ptable.proc[NPROC] && new_pick > 0; p++)
+    {
+      if (p->state == RUNNABLE)
+      {
+        new_pick -= p->tickets;
+        if (new_pick <= 0)
+        {
+            proc = p;
+            switchuvm(p);
+            p->state = RUNNING;
+            p->ticks = p->ticks + 1; // update num ticks for stats
+            swtch(&cpu->scheduler, proc->context);
+            switchkvm();
+            proc = 0;
         }
+      }
     }
-    p--;
-    proc = p;
-    switchuvm(p);
-    p->state = RUNNING;
-    p->ticks = p->ticks + 1; // update num ticks for stats
-    swtch(&cpu->scheduler, proc->context);
-    switchkvm();
-    proc = 0; 
     release(&ptable.lock);
-
 }
-
-
-
