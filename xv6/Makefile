@@ -7,26 +7,9 @@
 #
 # http://www.gnu.org/software/make/manual/
 
-
-# List your test case programs here
-TEST_SOURCES := $(wildcard testcases/*.c)
-TESTS := $(TEST_SOURCES:.c=)
-
-# Modify the 'all' target to build your tests
+# Default make target
 .PHONY: all
-all: xv6.img fs.img $(TESTS)
-
-# Build the test case programs
-$(TESTS): %: %.c
-	$(CC) $(CFLAGS) -o $@ $<
-
-# Run the test cases
-.PHONY: test
-test: $(TESTS)
-	@for test in $(TESTS); do \
-		echo "Running $$test..."; \
-		./$$test; \
-	done
+all: xv6.img fs.img
 
 ################################################################################
 # Build options
