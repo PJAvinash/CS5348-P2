@@ -5,7 +5,6 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
-#include "time.h"
 #include "schedulers.h"
 // added by JXP220032
 // struct ptable {
