@@ -9,6 +9,8 @@ struct pipe;
 struct proc;
 struct spinlock;
 struct stat;
+struct pstat; // added by JXP220032
+
 
 // bio.c
 void            binit(void);
