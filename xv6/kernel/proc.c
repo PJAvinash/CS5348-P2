@@ -264,7 +264,7 @@ wait(void)
 void
 scheduler(void)
 {
-  struct proc *p;
+  //struct proc *p;
 
   for(;;){
     // Enable interrupts on this processor.
