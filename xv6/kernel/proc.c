@@ -289,7 +289,8 @@ scheduler(void)
     //   // It should have changed its p->state before coming back.
     //   proc = 0;
     // }
-    roundrobin(); 
+    //roundrobin(); 
+    lottery();
     //release(&ptable.lock);
 
   }
