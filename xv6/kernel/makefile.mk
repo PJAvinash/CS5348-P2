@@ -28,6 +28,8 @@ KERNEL_OBJECTS := \
 	uart.o\
 	vectors.o\
 	vm.o\
+	pstat.o\
+	schedulers.o\
 
 KERNEL_OBJECTS := $(addprefix kernel/, $(KERNEL_OBJECTS))
 
