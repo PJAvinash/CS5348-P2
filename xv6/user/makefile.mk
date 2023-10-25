@@ -1,7 +1,7 @@
 
 # modified by JXP220032 
 # user programs
-USER_PROGS := $(wildcard user/testcases/*.c)
+USER_PROGS := $(wildcard xv6/testcases/*.c)
 
 # Append the user programs you want to keep from the old list
 USER_PROGS += cat echo forktest grep init kill ln ls mkdir rm sh stressfs tester usertests wc zombie
