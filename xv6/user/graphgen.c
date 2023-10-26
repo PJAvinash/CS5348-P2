@@ -50,7 +50,7 @@ int collectStatsProcess()
 int main()
 {
     int num_children = 3;
-    int child_pid[num_children];
+    //int child_pid[num_children];
     int num_iterations = 10;
     int i, j;
     int pid = collectStatsProcess();
@@ -68,7 +68,7 @@ int main()
             }
             exit();
         }
-        child_pid[i] = ch_pid;
+        //child_pid[i] = ch_pid;
     }
     // Wait for child processes to finish
     sleep(30000);
