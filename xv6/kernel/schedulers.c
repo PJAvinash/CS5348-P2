@@ -28,9 +28,31 @@ int setticketshelper(struct proc *procptr, int numtickets)
     }
 }
 
-#define LCG_MULTIPLIER 1664525
-#define LCG_INCREMENT 1013904223
-#define LCG_MODULUS ((unsigned int)1 << 31)
+// #define LCG_MULTIPLIER 1664525
+// #define LCG_INCREMENT 1013904223
+// #define LCG_MODULUS ((unsigned int)1 << 31)
+
+// /*
+// ** Generate a psuedo random number between 'from' and 'to' (inclusive)
+// */
+// int random(int from, int to)
+// {
+//     if (from > to)
+//     {
+//         // Swap 'from' and 'to' if 'from' is greater than 'to'
+//         int temp = from;
+//         from = to;
+//         to = temp;
+//     }
+//     static unsigned int state = 1;
+//     state = (LCG_MULTIPLIER * state + LCG_INCREMENT) % LCG_MODULUS;
+//     return from + (int)(state % (to - from + 1));
+// }
+
+
+#define LCG_MULTIPLIER 1103515245U
+#define LCG_INCREMENT 12345U
+#define LCG_MODULUS 0x7fffffffU
 
 /*
 ** Generate a psuedo random number between 'from' and 'to' (inclusive)
@@ -45,7 +67,7 @@ int random(int from, int to)
         to = temp;
     }
     static unsigned int state = 1;
-    state = (LCG_MULTIPLIER * state + LCG_INCREMENT) % LCG_MODULUS;
+    state = (int)(LCG_MULTIPLIER * state + LCG_INCREMENT) & LCG_MODULUS;
     return from + (int)(state % (to - from + 1));
 }
 
