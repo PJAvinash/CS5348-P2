@@ -12,5 +12,5 @@ struct pstat {
     int pid[NPROC]; // the PID of each process 
     int ticks[NPROC]; // the number of ticks each process has accumulated 
 };
-
+/*end*/
 #endif //_PSTAT_H_

@@ -258,43 +258,23 @@ wait(void)
 //  - swtch to start running that process
 //  - eventually that process transfers control
 //      via swtch back to the scheduler.
+
 /*
 ** modified by JXP220032 , 
+** roundrobin() is abstracted out and is available in schedulers.c , it is replaced with lottery() 
+** schedulers are responsible for aquiring and releasing lock on ptable
 */
 void
 scheduler(void)
 {
-  //struct proc *p;
-
   for(;;){
     // Enable interrupts on this processor.
     sti();
-
-    // Loop over process table looking for process to run.
-    //acquire(&ptable.lock);
-    // for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-    //   if(p->state != RUNNABLE)
-    //     continue;
-
-    //   // Switch to chosen process.  It is the process's job
-    //   // to release ptable.lock and then reacquire it
-    //   // before jumping back to us.
-    //   proc = p;
-    //   switchuvm(p);
-    //   p->state = RUNNING;
-    //   swtch(&cpu->scheduler, proc->context);
-    //   switchkvm();
-
-    //   // Process is done running for now.
-    //   // It should have changed its p->state before coming back.
-    //   proc = 0;
-    // }
     //roundrobin(); 
     lottery();
-    //release(&ptable.lock);
-
   }
 }
+/* end of modification */
 
 // Enter scheduler.  Must hold only ptable.lock
 // and have changed proc->state.

@@ -115,4 +115,5 @@ int sys_getpinfo(void){
   int retval = getpinfohelper(inputptr);
   return retval;
 }
+/* end of modifications */
 
