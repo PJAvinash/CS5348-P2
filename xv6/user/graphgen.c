@@ -39,7 +39,7 @@ int collectStatsProcess()
                     printf(1, "PID: %d, Tickets: %d, Ticks: %d\n", ps.pid[i], ps.tickets[i], ps.ticks[i]);
                 }
             }
-            printf("#############################################\n");
+            printf(1,"#############################################\n");
             sleep(500); // Sleep for 500 ms
         }
         exit(); // Exit the child process
