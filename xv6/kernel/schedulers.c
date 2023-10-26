@@ -44,7 +44,7 @@ int random(int from, int to)
         from = to;
         to = temp;
     }
-    static unsigned int state = 0;
+    static unsigned int state = 1;
     state = (LCG_MULTIPLIER * state + LCG_INCREMENT) % LCG_MODULUS;
     return from + (int)(state % (to - from + 1));
 }
