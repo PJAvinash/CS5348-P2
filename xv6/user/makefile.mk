@@ -27,7 +27,8 @@ USER_PROGS := \
 	setticket\
 	stress_equal\
 	stress_manylow\
-	switch_tickets
+	switch_tickets\
+	graphgen
 
 
 USER_PROGS := $(addprefix user/, $(USER_PROGS))
