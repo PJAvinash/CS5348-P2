@@ -19,22 +19,28 @@ void spin()
     }
 }
 
-void collectStatsThread(void* arg)
+void collectStatsProcess()
 {
-    int k =20;
-    while (k--)
+    int child_pid = fork();
+    if (child_pid == 0)
     {
-        struct pstat ps;
-        getpinfo(&ps);  // Retrieve process statistics
-        int i;
-        for (i = 0; i < NPROC; i++)
+        settickets(60);
+        int k = 20;
+        while (k--)
         {
-            if (ps.inuse[i] == 1)
+            struct pstat ps;
+            getpinfo(&ps); // Retrieve process statistics
+            int i;
+            for (i = 0; i < NPROC; i++)
             {
-                printf(1, "PID: %d, Tickets: %d, Ticks: %d\n", ps.pid[i], ps.tickets[i], ps.ticks[i]);
+                if (ps.inuse[i] == 1)
+                {
+                    printf(1, "PID: %d, Tickets: %d, Ticks: %d\n", ps.pid[i], ps.tickets[i], ps.ticks[i]);
+                }
             }
+            sleep(500); // Sleep for 500 ms
         }
-        sleep(500);  // Sleep for 500 ms
+        exit();
     }
 }
 
@@ -43,7 +49,7 @@ int main()
     int num_children = 3;
     int num_iterations = 10;
     int i, j;
-    thread_create(collectStatsThread, 0);
+    collectStatsProcess();
     for (i = 0; i < num_children; i++)
     {
         if (fork() == 0)
