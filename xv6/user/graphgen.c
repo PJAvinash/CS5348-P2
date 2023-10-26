@@ -72,14 +72,15 @@ int main()
     }
     // Wait for child processes to finish
     sleep(30000);
-    for (i = 0; i < num_children; i++)
-    {
-        kill(child_pid[i]);
-    }
+    // for (i = 0; i < num_children; i++)
+    // {
+    //     kill(child_pid[i]);
+    // }
     for (i = 0; i < num_children; i++)
     {
         wait();
     }
     kill(pid);
+    wait();
     exit();
 }
