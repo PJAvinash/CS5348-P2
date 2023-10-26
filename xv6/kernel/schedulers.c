@@ -6,6 +6,7 @@
 #include "proc.h"
 #include "spinlock.h"
 #include "schedulers.h"
+#include "random.h"
 /*
 ** this file is added by JXP220032, SXD210166 contains schedulers and some helper functions
 */
@@ -66,9 +67,10 @@ int random(int from, int to)
         from = to;
         to = temp;
     }
-    static unsigned int state = 1;
-    state = (int)((LCG_MULTIPLIER * state + LCG_INCREMENT) & LCG_MODULUS);
-    return from + (int)(state % (to - from + 1));
+    // static unsigned int state = 1;
+    // state = (int)((LCG_MULTIPLIER * state + LCG_INCREMENT) & LCG_MODULUS);
+    int r = (int)random_at_most(to -from);
+    return from + r;
 }
 
 /*
