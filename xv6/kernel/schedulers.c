@@ -69,7 +69,7 @@ int random(int from, int to)
     }
     // static unsigned int state = 1;
     // state = (int)((LCG_MULTIPLIER * state + LCG_INCREMENT) & LCG_MODULUS);
-    int r = (int)random_at_most(to -from);
+    int r = (int)random_at_most(to - from);
     return from + r;
 }
 
