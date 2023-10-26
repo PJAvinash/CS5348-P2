@@ -1,0 +1,158 @@
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 10
+PID: 4, Tickets: 60, Ticks: 1
+PID: 5, Tickets: 1, Ticks: 0
+PID: 6, Tickets: 1, Ticks: 0
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 100
+PID: 5, Tickets: 10, Ticks: 31
+PID: 6, Tickets: 20, Ticks: 64
+PID: 7, Tickets: 30, Ticks: 106
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 204
+PID: 5, Tickets: 10, Ticks: 60
+PID: 6, Tickets: 20, Ticks: 125
+PID: 7, Tickets: 30, Ticks: 219
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 310
+PID: 5, Tickets: 10, Ticks: 92
+PID: 6, Tickets: 20, Ticks: 187
+PID: 7, Tickets: 30, Ticks: 335
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 417
+PID: 5, Tickets: 10, Ticks: 139
+PID: 6, Tickets: 20, Ticks: 249
+PID: 7, Tickets: 30, Ticks: 426
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 514
+PID: 5, Tickets: 10, Ticks: 167
+PID: 6, Tickets: 20, Ticks: 318
+PID: 7, Tickets: 30, Ticks: 532
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 614
+PID: 5, Tickets: 10, Ticks: 192
+PID: 6, Tickets: 20, Ticks: 393
+PID: 7, Tickets: 30, Ticks: 632
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 710
+PID: 5, Tickets: 10, Ticks: 233
+PID: 6, Tickets: 20, Ticks: 459
+PID: 7, Tickets: 30, Ticks: 728
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 822
+PID: 5, Tickets: 10, Ticks: 269
+PID: 6, Tickets: 20, Ticks: 526
+PID: 7, Tickets: 30, Ticks: 829
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 938
+PID: 5, Tickets: 10, Ticks: 309
+PID: 6, Tickets: 20, Ticks: 592
+PID: 7, Tickets: 30, Ticks: 926
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1050
+PID: 5, Tickets: 10, Ticks: 340
+PID: 6, Tickets: 20, Ticks: 650
+PID: 7, Tickets: 30, Ticks: 1040
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1155
+PID: 5, Tickets: 10, Ticks: 381
+PID: 6, Tickets: 20, Ticks: 718
+PID: 7, Tickets: 30, Ticks: 1141
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1264
+PID: 5, Tickets: 10, Ticks: 416
+PID: 6, Tickets: 20, Ticks: 778
+PID: 7, Tickets: 30, Ticks: 1250
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1364
+PID: 5, Tickets: 10, Ticks: 444
+PID: 6, Tickets: 20, Ticks: 843
+PID: 7, Tickets: 30, Ticks: 1359
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1478
+PID: 5, Tickets: 10, Ticks: 479
+PID: 6, Tickets: 20, Ticks: 910
+PID: 7, Tickets: 30, Ticks: 1461
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1582
+PID: 5, Tickets: 10, Ticks: 514
+PID: 6, Tickets: 20, Ticks: 984
+PID: 7, Tickets: 30, Ticks: 1555
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1694
+PID: 5, Tickets: 10, Ticks: 553
+PID: 6, Tickets: 20, Ticks: 1054
+PID: 7, Tickets: 30, Ticks: 1648
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1796
+PID: 5, Tickets: 10, Ticks: 579
+PID: 6, Tickets: 20, Ticks: 1130
+PID: 7, Tickets: 30, Ticks: 1750
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 1899
+PID: 5, Tickets: 10, Ticks: 603
+PID: 6, Tickets: 20, Ticks: 1204
+PID: 7, Tickets: 30, Ticks: 1852
+#############################################
+PID: 1, Tickets: 1, Ticks: 20
+PID: 2, Tickets: 1, Ticks: 21
+PID: 3, Tickets: 1, Ticks: 12
+PID: 4, Tickets: 60, Ticks: 2001
+PID: 5, Tickets: 10, Ticks: 637
+PID: 6, Tickets: 20, Ticks: 1278
+PID: 7, Tickets: 30, Ticks: 1947
