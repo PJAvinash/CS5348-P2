@@ -9,7 +9,7 @@ void spin()
     int i = 0;
     int j = 0;
     int k = 0;
-    for (i = 0; i < 50; ++i)
+    for (i = 0; i < 500; ++i)
     {
         for (j = 0; j < 400000; ++j)
         {
@@ -40,7 +40,7 @@ int collectStatsProcess()
                 }
             }
             printf(1,"#############################################\n");
-            sleep(500); // Sleep for 500 ms
+            sleep(200); // Sleep for 200 ms
         }
         exit(); // Exit the child process
     }
@@ -50,12 +50,14 @@ int collectStatsProcess()
 int main()
 {
     int num_children = 3;
+    int child_pid[num_children];
     int num_iterations = 10;
     int i, j;
     int pid = collectStatsProcess();
     for (i = 0; i < num_children; i++)
     {
-        if (fork() == 0)
+        int ch_pid = fork();
+        if (ch_pid == 0)
         {
             // Child process
             int tickets = (i+1)*10;
@@ -66,11 +68,16 @@ int main()
             }
             exit();
         }
+        child_pid[i] = ch_pid;
     }
     // Wait for child processes to finish
     for (i = 0; i < num_children; i++)
     {
         wait();
+    }
+    for (i = 0; i < num_children; i++)
+    {
+        kill(child_pid[i]);
     }
     kill(pid);
     exit();
