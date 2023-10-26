@@ -67,7 +67,7 @@ int random(int from, int to)
         to = temp;
     }
     static unsigned int state = 1;
-    state = (int)(LCG_MULTIPLIER * state + LCG_INCREMENT) & LCG_MODULUS;
+    state = (int)((LCG_MULTIPLIER * state + LCG_INCREMENT) & LCG_MODULUS);
     return from + (int)(state % (to - from + 1));
 }
 
