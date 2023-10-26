@@ -19,7 +19,8 @@ void spin()
     }
 }
 
-void collectStatsProcess()
+// creates a child process with 60 tickets to collec the stats and returns the pid, 
+int collectStatsProcess()
 {
     int child_pid = fork();
     if (child_pid == 0)
@@ -38,10 +39,12 @@ void collectStatsProcess()
                     printf(1, "PID: %d, Tickets: %d, Ticks: %d\n", ps.pid[i], ps.tickets[i], ps.ticks[i]);
                 }
             }
+            printf("#############################################\n");
             sleep(500); // Sleep for 500 ms
         }
-        exit();
+        exit(); // Exit the child process
     }
+    return child_pid;
 }
 
 int main()
@@ -49,7 +52,7 @@ int main()
     int num_children = 3;
     int num_iterations = 10;
     int i, j;
-    collectStatsProcess();
+    int pid = collectStatsProcess();
     for (i = 0; i < num_children; i++)
     {
         if (fork() == 0)
@@ -69,5 +72,6 @@ int main()
     {
         wait();
     }
+    kill(pid);
     exit();
 }
